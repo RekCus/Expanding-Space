@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public int health;
     Animator anim;
     bool jump = false;
+    bool isShooting = false;
     public Transform firePoint;
     public GameObject bulletPrefab, slash;
 
@@ -38,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            fire();
+            StartCoroutine(shooting());
         }
         else if (Input.GetButtonDown("Fire2"))
         {
@@ -84,7 +85,10 @@ public class PlayerMovement : MonoBehaviour
 
     void fire()
     {
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+      
+            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        
+ 
     }
 
     //void melee()
@@ -102,6 +106,18 @@ public class PlayerMovement : MonoBehaviour
         slash.SetActive(false);
         yield break;
     }
+
+    IEnumerator shooting()
+    {
+        anim.SetTrigger("Shooting");
+        yield return new WaitForSeconds(0.1f);
+        fire();
+        anim.ResetTrigger("Shooting");
+        yield break;
+
+    }
+
+
 
     void pickUpCoin()
     {

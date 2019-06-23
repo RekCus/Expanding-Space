@@ -139,7 +139,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.11692271, y: 0.57}
+  m_Offset: {x: 0.07359165, y: 0.56999993}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -150,7 +150,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.783941, y: 2.3020535}
+  m_Size: {x: 1.0473164, y: 2.3020535}
   m_EdgeRadius: 0
 --- !u!114 &5827617626806112037
 MonoBehaviour:
@@ -164,9 +164,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b55ecbeb077fc4392fafa1353ac03e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 250
   m_CrouchSpeed: 0.36
   m_MovementSmoothing: 0.05
+  m_JumpForce: 250
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
@@ -174,6 +174,7 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 5827617626930512882}
   m_CeilingCheck: {fileID: 5827617628086503522}
   m_CrouchDisableCollider: {fileID: 0}
+  m_Grounded: 0
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -199,7 +200,7 @@ MonoBehaviour:
   controller: {fileID: 5827617626806112037}
   runSpeed: 10
   money: 0
-  health: 100
+  health: 9
   firePoint: {fileID: 5827617627530951344}
   bulletPrefab: {fileID: 8092405178604873315, guid: aed3ee02f4ffe1d47bf2743c422453e2,
     type: 3}
@@ -323,7 +324,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 60606e48e22488948b7a258dc7d99fb2, type: 3}
-  m_Color: {r: 1, g: 0.40392157, b: 0.8039216, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.04970503, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

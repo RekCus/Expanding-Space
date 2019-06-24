@@ -1,0 +1,2 @@
+C:\Users\spide\Documents\GitHub\Expanding-Space\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+C:\Users\spide\Documents\GitHub\Expanding-Space\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache

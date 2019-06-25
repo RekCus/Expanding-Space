@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
     void Die()
     {
       Instantiate(particle, transform.position, Quaternion.identity);
+        FindObjectOfType<SoundManager>().Play("EnemyDeath");
         Destroy(gameObject);
     }
 

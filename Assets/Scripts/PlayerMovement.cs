@@ -34,12 +34,14 @@ public class PlayerMovement : MonoBehaviour
         {
             jump = true;
             anim.SetTrigger("Jump");
-            
+            FindObjectOfType<SoundManager>().Play("Jump");
+
         }
 
         if (Input.GetButtonDown("Fire1"))
         {
             StartCoroutine(shooting());
+            FindObjectOfType<SoundManager>().Play("Shooting");
         }
         else if (Input.GetButtonDown("Fire2"))
         {
@@ -62,11 +64,17 @@ public class PlayerMovement : MonoBehaviour
     public void TakeDamage(int damage)
     {
         Gamemanager.GM.hp -= damage;
-
-        if (Gamemanager.GM.hp <= 0)
+        
+        if (Gamemanager.GM.hp > 0)
+        {
+            FindObjectOfType<SoundManager>().Play("PlayerHit");
+        }
+        else if (Gamemanager.GM.hp <= 0)
         {
             Gamemanager.GM.Die();
+            FindObjectOfType<SoundManager>().Play("PlayerDeath");
         }
+
     }
 
    
@@ -117,6 +125,7 @@ public class PlayerMovement : MonoBehaviour
     void pickUpCoin()
     {
         Gamemanager.GM.coins += 10;
+        FindObjectOfType<SoundManager>().Play("Pickup");
 
     }
 

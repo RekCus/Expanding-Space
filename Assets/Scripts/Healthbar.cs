@@ -33,7 +33,7 @@ public class Healthbar : MonoBehaviour
     void Update()
     {
 
-        hp = pm.health;
+        hp = Gamemanager.GM.hp;
 
         switch (hp)
         {
@@ -64,10 +64,6 @@ public class Healthbar : MonoBehaviour
             case 9:
                 render.sprite = s9;
                 break;
-
-
-
-
         }
 
     }

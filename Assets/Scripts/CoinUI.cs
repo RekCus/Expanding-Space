@@ -1,23 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class CoinUI : MonoBehaviour
 {
-    public GameObject Text;
-    public PlayerMovement pm;
 
-
-
-    // Start is called before the first frame update
-    void Start()
+    public TextMeshProUGUI text;
+    private void Update()
     {
-        
+        text.text = Gamemanager.GM.coins.ToString();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

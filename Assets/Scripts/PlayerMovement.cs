@@ -7,11 +7,11 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public CharacterController2D controller;
-
+    
     float horizontalMove = 0f;
     public float runSpeed = 40f;
-    public int money = 0;
-    public int health;
+   
+   
     Animator anim;
     bool jump = false;
     bool isShooting = false;
@@ -61,20 +61,15 @@ public class PlayerMovement : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
+        Gamemanager.GM.hp -= damage;
 
-        if (health <= 0)
+        if (Gamemanager.GM.hp <= 0)
         {
-            Die();
+            Gamemanager.GM.Die();
         }
     }
 
-    void Die()
-    {
-        Destroy(gameObject);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
+   
     private void FixedUpdate()
     {
 
@@ -121,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
 
     void pickUpCoin()
     {
-        money += 10;
+        Gamemanager.GM.coins += 10;
 
     }
 
@@ -141,7 +136,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Spikes"))
         {
-            Die();
+            Gamemanager.GM.Die();
         }
 
 
